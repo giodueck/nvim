@@ -279,7 +279,7 @@ vim.api.nvim_set_keymap(
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc' --[[ 'help' ]], 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -543,3 +543,7 @@ vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 -- require('lspconfig/server_configurations/prolog_lsp')
 -- require('lspconfig').prolog_lsp.setup{}
 
+require('onedark').setup {
+    style = 'deep'
+}
+require('onedark').load()
