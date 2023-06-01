@@ -529,6 +529,8 @@ vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", { noremap = true, desc = 'Focu
 vim.keymap.set("n", "<leader>l", ":wincmd l<CR>", { noremap = true, desc = 'Focus right window' })
 vim.keymap.set("n", "<leader>j", ":wincmd j<CR>", { noremap = true, desc = 'Focus window below' })
 vim.keymap.set("n", "<leader>k", ":wincmd k<CR>", { noremap = true, desc = 'Focus window above' })
+vim.keymap.set("n", "<leader>.", "<C-w>>", { noremap = true, desc = 'Increase window width' })
+vim.keymap.set("n", "<leader>,", "<C-w><", { noremap = true, desc = 'Decrease window width' })
 
 -- move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
 vim.cmd("nnoremap <A-j> :m .+1<CR>==")
