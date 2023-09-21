@@ -3,7 +3,7 @@
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = '\\'
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -155,6 +155,13 @@ require('lazy').setup({
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+
+  {
+    "lervag/vimtex",
+    init = function()
+      --vim.g.vimtex_options = "go here"
+    end,
   }
 }, {})
 
@@ -549,3 +556,15 @@ require('onedark').setup {
     style = 'deep'
 }
 require('onedark').load()
+
+
+-- VimTeX configs
+
+-- This is necessary for VimTeX to load properly. The "indent" is optional.
+-- Note that most plugin managers will do this automatically.
+-- vim.cmd("filetype plugin indent on")
+
+vim.cmd("syntax enable")
+
+vim.cmd("let g:vimtex_view_method = 'zathura'")
+
