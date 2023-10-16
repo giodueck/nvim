@@ -551,7 +551,7 @@ vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 -- require('lspconfig/server_configurations/prolog_lsp')
 -- require('lspconfig').prolog_lsp.setup{}
 
--- Change theme stryle
+-- Change theme style
 require('onedark').setup {
     style = 'deep'
 }
@@ -573,3 +573,7 @@ vim.cmd("let g:vimtex_complete_recursive_bib = 0")
 vim.cmd("let g:vimtex_complete_close_braces = 1")
 vim.cmd("let g:vimtex_quickfix_mode = 2")
 vim.cmd("let g:vimtex_quickfix_open_on_warning = 1")
+
+-- Set linebreak makes the text wrap whole words when the line space on the screen
+-- is too small for the line, instead of only the remaining characters
+vim.cmd("set linebreak")
