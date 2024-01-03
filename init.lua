@@ -34,7 +34,7 @@ require('lazy').setup({
   'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
-  --'tpope/vim-sleuth',
+  'tpope/vim-sleuth',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -581,3 +581,9 @@ vim.cmd("let g:vimtex_quickfix_open_on_warning = 1")
 -- Set linebreak makes the text wrap whole words when the line space on the screen
 -- is too small for the line, instead of only the remaining characters
 vim.cmd("set linebreak")
+
+
+-- List configs
+-- Set trailing spaces to '~', tabs to '> ' and nbsp to '␣'
+vim.cmd("set list")
+vim.cmd("set listchars=trail:~,tab:>\\ ,nbsp:␣")
