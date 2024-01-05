@@ -168,6 +168,17 @@ require('lazy').setup({
     init = function()
       --vim.g.vimtex_options = "go here"
     end,
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
   }
 }, {})
 
@@ -596,3 +607,26 @@ vim.cmd("set linebreak")
 -- Set trailing spaces to '~', tabs to ' ' and nbsp to '␣'
 vim.cmd("set list")
 vim.cmd("set listchars=trail:~,tab:\\ ,nbsp:␣")
+
+-- Neotree keybinds
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>t",
+  ":Neotree %:p:h<CR>",
+  {noremap = true, desc = 'Neo[t]ree'}
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tq",
+  ":Neotree close<CR>",
+  {noremap = true, desc = 'Close Neotree'}
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tg",
+  ":Neotree %:p:h git_status<CR>",
+  {noremap = true, desc = 'Neo[t]ree [G]it Status'}
+)
+
