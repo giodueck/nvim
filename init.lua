@@ -611,22 +611,15 @@ vim.cmd("set listchars=trail:~,tab:\\ ,nbsp:␣")
 -- Neotree keybinds
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>t",
-  ":Neotree %:p:h<CR>",
-  {noremap = true, desc = 'Neo[t]ree'}
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tq",
-  ":Neotree close<CR>",
-  {noremap = true, desc = 'Close Neotree'}
+  "<leader>tt",
+  ":Neotree toggle %:p:h<CR>",
+  {noremap = true, desc = '[T]oggle Neotree'}
 )
 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>tg",
   ":Neotree %:p:h git_status<CR>",
-  {noremap = true, desc = 'Neo[t]ree [G]it Status'}
+  {noremap = true, desc = 'Neotree [G]it Status'}
 )
 
