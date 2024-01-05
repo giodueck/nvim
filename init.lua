@@ -285,8 +285,17 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.api.nvim_set_keymap(
   "n",
   "<leader>fb",
-  "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
-  {noremap = true, desc = '[F]ile [B]rowser'}
+  -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  {noremap = true, desc = '[F]ile [B]rowser in buffer path'}
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fB",
+  -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+  ":Telescope file_browser<CR>",
+  {noremap = true, desc = '[F]ile [B]rowser in cwd'}
 )
 
 -- [[ Configure Treesitter ]]
@@ -584,6 +593,6 @@ vim.cmd("set linebreak")
 
 
 -- List configs
--- Set trailing spaces to '~', tabs to '> ' and nbsp to '␣'
+-- Set trailing spaces to '~', tabs to ' ' and nbsp to '␣'
 vim.cmd("set list")
 vim.cmd("set listchars=trail:~,tab:\\ ,nbsp:␣")
