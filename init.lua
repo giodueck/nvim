@@ -54,6 +54,9 @@ require('lazy').setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
+
+      -- In an attempt to make Go LSP work
+      {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
     },
   },
 
@@ -551,9 +554,6 @@ vim.cmd("inoremap <A-k> <Esc>:m .-2<CR>==gi")
 vim.cmd("vnoremap <A-j> :m '>+1<CR>gv=gv")
 vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 
--- Prolog LSP 
--- require('lspconfig/server_configurations/prolog_lsp')
--- require('lspconfig').prolog_lsp.setup{}
 
 -- Change theme style
 require('onedark').setup {
@@ -586,4 +586,4 @@ vim.cmd("set linebreak")
 -- List configs
 -- Set trailing spaces to '~', tabs to '> ' and nbsp to '␣'
 vim.cmd("set list")
-vim.cmd("set listchars=trail:~,tab:>\\ ,nbsp:␣")
+vim.cmd("set listchars=trail:~,tab:\\ ,nbsp:␣")
