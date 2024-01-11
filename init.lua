@@ -574,6 +574,8 @@ vim.cmd("inoremap <A-k> <Esc>:m .-2<CR>==gi")
 vim.cmd("vnoremap <A-j> :m '>+1<CR>gv=gv")
 vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 
+-- exit terminal mode
+vim.cmd("tnoremap <Esc> <C-\\><C-n>")
 
 -- Change theme style
 require('onedark').setup {
