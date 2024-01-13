@@ -625,3 +625,10 @@ vim.api.nvim_set_keymap(
   {noremap = true, desc = 'Neotree [G]it Status'}
 )
 
+-- Git shortcuts
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gb",
+  ":Git blame<CR>",
+  {noremap = true, desc = '[G]it [B]lame'}
+)
