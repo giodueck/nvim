@@ -170,16 +170,6 @@ require('lazy').setup({
     end,
   },
 
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-  }
 }, {})
 
 -- [[ Setting options ]]
@@ -610,25 +600,25 @@ vim.cmd("set linebreak")
 vim.cmd("set list")
 vim.cmd("set listchars=trail:~,tab:\\ ,nbsp:␣")
 
--- Neotree keybinds
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tt",
-  ":Neotree toggle %:p:h<CR>",
-  {noremap = true, desc = '[T]oggle Neotree'}
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tg",
-  ":Neotree %:p:h git_status<CR>",
-  {noremap = true, desc = 'Neotree [G]it Status'}
-)
-
 -- Git shortcuts
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gb",
   ":Git blame<CR>",
   {noremap = true, desc = '[G]it [B]lame'}
+)
+
+-- Terminal shortcuts
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tt",
+  ":term<CR>i",
+  {noremap = true, desc = 'Open terminal'}
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tv",
+  ":vsplit<CR><C-w>l:term<CR>i",
+  {noremap = true, desc = 'Open terminal in new vertical window'}
 )
