@@ -299,6 +299,37 @@ vim.api.nvim_set_keymap(
   {noremap = true, desc = '[F]ile [B]rowser in cwd'}
 )
 
+-- Same functions but without previewer enabled, which crashes sometimes with weird and/or big files
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>sqf",
+  ":lua require('telescope.builtin').find_files({previewer=false})<CR>",
+  {noremap = true, desc = '[S]earch [F]iles without previewer'}
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>sqg",
+  ":lua require('telescope.builtin').live_grep({previewer=false})<CR>",
+  {noremap = true, desc = '[S]earch by [G]rep without previewer'}
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fqb",
+  -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+  ":Telescope file_browser path=%:p:h select_buffer=true previewer=false<CR>",
+  {noremap = true, desc = '[F]ile [B]rowser in buffer path without previewer'}
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fqB",
+  -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+  ":Telescope file_browser previewer=false<CR>",
+  {noremap = true, desc = '[F]ile [B]rowser in cwd without previewer'}
+)
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
