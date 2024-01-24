@@ -1,4 +1,3 @@
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -27,7 +26,7 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
--- NOTE: First, some plugins that don't require any configuration
+  -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -47,7 +46,8 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',
+      {
+        'j-hui/fidget.nvim',
         tag = "legacy",
         opts = {}
       },
@@ -56,7 +56,7 @@ require('lazy').setup({
       'folke/neodev.nvim',
 
       -- In an attempt to make Go LSP work
-      {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+      { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
     },
   },
 
@@ -66,7 +66,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',          opts = {} },
   { -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -113,7 +113,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',         opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -288,7 +288,7 @@ vim.api.nvim_set_keymap(
   "<leader>fb",
   -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
   ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-  {noremap = true, desc = '[F]ile [B]rowser in buffer path'}
+  { noremap = true, desc = '[F]ile [B]rowser in buffer path' }
 )
 
 vim.api.nvim_set_keymap(
@@ -296,7 +296,7 @@ vim.api.nvim_set_keymap(
   "<leader>fB",
   -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
   ":Telescope file_browser<CR>",
-  {noremap = true, desc = '[F]ile [B]rowser in cwd'}
+  { noremap = true, desc = '[F]ile [B]rowser in cwd' }
 )
 
 -- Same functions but without previewer enabled, which crashes sometimes with weird and/or big files
@@ -305,14 +305,14 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>sqf",
   ":lua require('telescope.builtin').find_files({previewer=false})<CR>",
-  {noremap = true, desc = '[S]earch [F]iles without previewer'}
+  { noremap = true, desc = '[S]earch [F]iles without previewer' }
 )
 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>sqg",
   ":lua require('telescope.builtin').live_grep({previewer=false})<CR>",
-  {noremap = true, desc = '[S]earch by [G]rep without previewer'}
+  { noremap = true, desc = '[S]earch by [G]rep without previewer' }
 )
 
 vim.api.nvim_set_keymap(
@@ -320,7 +320,7 @@ vim.api.nvim_set_keymap(
   "<leader>fqb",
   -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
   ":Telescope file_browser path=%:p:h select_buffer=true previewer=false<CR>",
-  {noremap = true, desc = '[F]ile [B]rowser in buffer path without previewer'}
+  { noremap = true, desc = '[F]ile [B]rowser in buffer path without previewer' }
 )
 
 vim.api.nvim_set_keymap(
@@ -328,7 +328,7 @@ vim.api.nvim_set_keymap(
   "<leader>fqB",
   -- "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
   ":Telescope file_browser previewer=false<CR>",
-  {noremap = true, desc = '[F]ile [B]rowser in cwd without previewer'}
+  { noremap = true, desc = '[F]ile [B]rowser in cwd without previewer' }
 )
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -559,25 +559,25 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>x",
   "<cmd>lua require 'hex'.toggle()<CR>",
-  {noremap = true, desc = 'Toggle He[X] Editor'}
+  { noremap = true, desc = 'Toggle He[X] Editor' }
 )
 
 -- Comment setup (redundant actually)
 require('Comment').setup({
-    {
-      padding = true,
-      sticky = true,
-      ignore = nil,
-      toggler = { line = 'gcc', block = 'gbc' },
-      opleader = { line = 'gc', block = 'gb' },
-      extra = { above = 'gcO', below = 'gco', eol = 'gcA' },
-      mappings = { basic = true, extra = true },
-      pre_hook = nil,
-      post_hook = nil,
+  {
+    padding = true,
+    sticky = true,
+    ignore = nil,
+    toggler = { line = 'gcc', block = 'gbc' },
+    opleader = { line = 'gc', block = 'gb' },
+    extra = { above = 'gcO', below = 'gco', eol = 'gcA' },
+    mappings = { basic = true, extra = true },
+    pre_hook = nil,
+    post_hook = nil,
   }
 })
 
--- Practical keybinds 
+-- Practical keybinds
 -- split screen and navigation
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split' })
 vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", { noremap = true, desc = 'Focus left window' })
@@ -598,9 +598,13 @@ vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 -- exit terminal mode
 vim.cmd("tnoremap <Esc> <C-\\><C-n>")
 
+-- auto format document
+vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", { noremap = true, desc = "[F]ormat [F]ile" })
+
+
 -- Change theme style
 require('onedark').setup {
-    style = 'deep'
+  style = 'deep'
 }
 require('onedark').load()
 
@@ -636,7 +640,7 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>gb",
   ":Git blame<CR>",
-  {noremap = true, desc = '[G]it [B]lame'}
+  { noremap = true, desc = '[G]it [B]lame' }
 )
 
 -- Terminal shortcuts
@@ -644,12 +648,12 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>tt",
   ":term<CR>i",
-  {noremap = true, desc = 'Open terminal'}
+  { noremap = true, desc = 'Open terminal' }
 )
 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>tv",
   ":vsplit<CR><C-w>l:term<CR>i",
-  {noremap = true, desc = 'Open terminal in new vertical window'}
+  { noremap = true, desc = 'Open terminal in new vertical window' }
 )
