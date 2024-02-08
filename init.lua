@@ -656,12 +656,38 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
+  "<leader>gl",
+  ":Git log<CR>",
+  { noremap = true, desc = '[G]it [L]og' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gn",
+  ":Git log --oneline<CR>",
+  { noremap = true, desc = '[G]it Log --o[n]eline' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
   "<leader>gc",
   ":Git commit -v<CR>",
   { noremap = true, desc = '[G]it [C]ommit' }
 )
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gps",
+  ":Git push<CR>",
+  { noremap = true, desc = '[G]it [P]u[s]h' }
+)
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gpl",
+  ":Git pull<CR>",
+  { noremap = true, desc = '[G]it [P]u[l]l' }
+)
 
 -- Terminal shortcuts
 vim.api.nvim_set_keymap(
