@@ -156,13 +156,17 @@ require('lazy').setup({
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
   --{ import = 'custom.plugins' },
+
+  -- Hex editor
   { 'RaafatTurki/hex.nvim' },
 
+  -- Telescope file browser
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 
+  -- LaTeX functonality
   {
     "lervag/vimtex",
     init = function()
@@ -635,13 +639,29 @@ vim.cmd("set linebreak")
 vim.cmd("set list")
 vim.cmd("set listchars=trail:~,tab:\\ ,nbsp:␣")
 
--- Git shortcuts
+-- Git keymaps
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gb",
   ":Git blame<CR>",
   { noremap = true, desc = '[G]it [B]lame' }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gs",
+  ":Git<CR>",
+  { noremap = true, desc = '[G]it [S]tatus' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gc",
+  ":Git commit -v<CR>",
+  { noremap = true, desc = '[G]it [C]ommit' }
+)
+
+
 
 -- Terminal shortcuts
 vim.api.nvim_set_keymap(
