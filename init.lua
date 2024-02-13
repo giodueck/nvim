@@ -689,6 +689,16 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = '[G]it [P]u[l]l' }
 )
 
+-- Git merge conflict mappings
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gmc",
+  ":Gvdiffsplit!<CR>",
+  { noremap = true, desc = '[G]it [M]erge [C]onflict: 3 way diff split' }
+)
+
+
 -- Terminal shortcuts
 vim.api.nvim_set_keymap(
   "n",
