@@ -671,7 +671,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gc",
-  ":Git commit -v<CR>",
+  ":Git commit -m '",
   { noremap = true, desc = '[G]it [C]ommit' }
 )
 
