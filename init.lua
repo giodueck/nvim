@@ -663,7 +663,7 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>gn",
+  "<leader>glo",
   ":Git log --oneline<CR>",
   { noremap = true, desc = '[G]it Log --o[n]eline' }
 )
