@@ -174,6 +174,62 @@ require('lazy').setup({
     end,
   },
 
+  -- Obsidian
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",  -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    -- event = {
+    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+    --   "BufReadPre path/to/my-vault/**.md",
+    --   "BufNewFile path/to/my-vault/**.md",
+    -- },
+    dependencies = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "Academic",
+          path = "~/Obsidian/ObsidianAcademic",
+        },
+        {
+          name = "Main",
+          path = "~/Obsidian/ObsidianMain",
+        },
+        {
+          name = "Personal",
+          path = "~/Obsidian/ObsidianPersonal",
+        },
+        {
+          name = "Samuu",
+          path = "~/Obsidian/ObsidianSamuu",
+        },
+      },
+
+      templates = {
+        subdir = "Templates",
+        date_format = "%Y-%m-%d",
+        time_format = "%H:%M",
+        -- A map for custom variables, the key should be the variable and the value a function
+        substitutions = {},
+      },
+
+      note_id_func = function(title)
+        if title ~= nil then
+          return title
+        else
+          return tostring(os.time())
+        end
+      end,
+    },
+  },
+
 }, {})
 
 -- [[ Setting options ]]
@@ -712,4 +768,14 @@ vim.api.nvim_set_keymap(
   "<leader>tv",
   ":vsplit<CR><C-w>l:term<CR>i",
   { noremap = true, desc = 'Open terminal in new vertical window' }
+)
+
+-- Obsidian options and keymaps
+vim.o.conceallevel=1
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ot",
+  ":ObsidianTemplate<CR>",
+  { noremap = true, desc = 'Obsidian: insert template' }
 )
