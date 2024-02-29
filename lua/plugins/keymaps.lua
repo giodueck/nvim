@@ -152,3 +152,10 @@ vim.api.nvim_set_keymap(
   ":ObsidianTemplate<CR>",
   { noremap = true, desc = 'Obsidian: insert template' }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ob",
+  ":ObsidianBacklinks<CR>",
+  { noremap = true, desc = 'Obsidian: show backlinks' }
+)
