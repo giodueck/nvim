@@ -181,6 +181,18 @@ require('lazy').setup({
     },
     opts = {
       workspaces = {
+        { -- Having this in front means if no path is found, then it won't throw errors
+          name = "no-vault",
+          path = function()
+            return assert(vim.fn.getcwd())
+          end,
+          overrides = {
+            templates = {
+              vim.NIL,
+            },
+            disable_frontmatter = true,
+          },
+        },
         {
           name = "Academic",
           path = "~/Obsidian/ObsidianAcademic",
