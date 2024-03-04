@@ -188,7 +188,7 @@ require('lazy').setup({
           end,
           overrides = {
             templates = {
-              vim.NIL,
+              subdir = vim.NIL,
             },
             disable_frontmatter = true,
           },
