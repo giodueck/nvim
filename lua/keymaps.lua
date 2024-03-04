@@ -19,6 +19,7 @@ vim.keymap.set("n", "<leader>j", ":wincmd j<CR>", { noremap = true, desc = 'Focu
 vim.keymap.set("n", "<leader>k", ":wincmd k<CR>", { noremap = true, desc = 'Focus window above' })
 vim.keymap.set("n", "<leader>.", "10<C-w>>", { noremap = true, desc = 'Increase window width' })
 vim.keymap.set("n", "<leader>,", "10<C-w><", { noremap = true, desc = 'Decrease window width' })
+vim.keymap.set("n", "<leader>wo", "<C-w>o", { noremap = true, desc = 'Close all other windows' })
 
 -- move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
 vim.cmd("nnoremap <A-j> :m .+1<CR>==")
@@ -30,3 +31,6 @@ vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 
 -- exit terminal mode
 vim.cmd("tnoremap <Esc> <C-\\><C-n>")
+
+-- destroy buffer
+vim.keymap.set("n", "<leader>bd", ":bd<CR>", { noremap = true, desc = 'Destroy current buffer' })
