@@ -182,32 +182,10 @@ require('lazy').setup({
     opts = {
       workspaces = {
         {
-          name = "Academic",
-          path = "~/Obsidian/ObsidianAcademic",
-        },
-        {
-          name = "Main",
-          path = "~/Obsidian/ObsidianMain",
-        },
-        {
-          name = "Personal",
-          path = "~/Obsidian/ObsidianPersonal",
-        },
-        {
-          name = "Samuu",
-          path = "~/Obsidian/ObsidianSamuu",
-        },
-        {
-          name = "no-vault",
+          name = "buf-parent",
           path = function()
-            return assert(vim.fn.getcwd())
+            return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
           end,
-          overrides = {
-            templates = {
-              subdir = vim.NIL,
-            },
-            disable_frontmatter = true,
-          },
         },
       },
 
