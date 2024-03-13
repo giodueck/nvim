@@ -206,6 +206,17 @@ require('lazy').setup({
           return tostring(os.time())
         end
       end,
+
+      ui = {
+        checkboxes = {
+          -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
+          [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+          ["x"] = { char = "", hl_group = "ObsidianDone" },
+          [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+          ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+          ["/"] = { char = "󰡖", hl_group = "ObsidianDone" },
+        },
+      },
     },
   },
 

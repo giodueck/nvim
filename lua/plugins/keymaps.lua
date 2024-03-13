@@ -166,3 +166,10 @@ vim.api.nvim_set_keymap(
   ":ObsidianBacklinks<CR>",
   { noremap = true, desc = 'Obsidian: show backlinks' }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>oa",
+  ":ObsidianTags<CR>",
+  { noremap = true, desc = 'Obsidian: tags' }
+)
