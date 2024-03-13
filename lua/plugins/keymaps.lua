@@ -29,6 +29,13 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = '[F]ile [B]rowser in cwd' }
 )
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fd",
+  ":Telescope file_browser files=false<CR>",
+  { noremap = true, desc = '[F]ind [D]irectory' }
+)
+
 -- Same functions but without previewer enabled, which crashes sometimes with weird and/or big files
 
 vim.api.nvim_set_keymap(
