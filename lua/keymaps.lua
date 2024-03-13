@@ -11,7 +11,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
--- split screen and navigation
+-- Split screen and window navigation
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split' })
 vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", { noremap = true, desc = 'Focus left window' })
 vim.keymap.set("n", "<leader>l", ":wincmd l<CR>", { noremap = true, desc = 'Focus right window' })
@@ -21,7 +21,7 @@ vim.keymap.set("n", "<leader>.", "10<C-w>>", { noremap = true, desc = 'Increase 
 vim.keymap.set("n", "<leader>,", "10<C-w><", { noremap = true, desc = 'Decrease window width' })
 vim.keymap.set("n", "<leader>wo", "<C-w>o", { noremap = true, desc = 'Close all other windows' })
 
--- move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
+-- Move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
 vim.cmd("nnoremap <A-j> :m .+1<CR>==")
 vim.cmd("nnoremap <A-k> :m .-2<CR>==")
 vim.cmd("inoremap <A-j> <Esc>:m .+1<CR>==gi")
@@ -29,8 +29,12 @@ vim.cmd("inoremap <A-k> <Esc>:m .-2<CR>==gi")
 vim.cmd("vnoremap <A-j> :m '>+1<CR>gv=gv")
 vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 
--- exit terminal mode
+-- Exit terminal mode
 vim.cmd("tnoremap <Esc> <C-\\><C-n>")
 
--- destroy buffer
+-- Destroy buffer
 vim.keymap.set("n", "<leader>bd", ":bd<CR>", { noremap = true, desc = 'Destroy current buffer' })
+
+-- Vertical navigation
+vim.cmd("nnoremap <C-d> <C-d>zz")
+vim.cmd("nnoremap <C-u> <C-u>zz")
