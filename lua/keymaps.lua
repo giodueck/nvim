@@ -29,11 +29,26 @@ vim.cmd("inoremap <A-k> <Esc>:m .-2<CR>==gi")
 vim.cmd("vnoremap <A-j> :m '>+1<CR>gv=gv")
 vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 
--- Exit terminal mode
+-- Terminal mode
 vim.cmd("tnoremap <Esc> <C-\\><C-n>")
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tt",
+  ":term<CR>i",
+  { noremap = true, desc = 'Open terminal' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tv",
+  ":vsplit<CR><C-w>l:term<CR>i",
+  { noremap = true, desc = 'Open terminal in new vertical window' }
+)
+
 -- Destroy buffer
-vim.keymap.set("n", "<leader>bd", ":bd<CR>", { noremap = true, desc = 'Destroy current buffer' })
+--  Changed to "gq": some vim-fugitive windows have this command, but not all for some reason
+vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current buffer' })
 
 -- Vertical navigation
 vim.cmd("nnoremap <C-d> <C-d>zz")

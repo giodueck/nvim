@@ -74,10 +74,10 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = 'Toggle He[X] Editor' }
 )
 
--- auto format document
+-- [[ LSP ]]
 vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", { noremap = true, desc = "[F]ormat [F]ile" })
 
--- Git keymaps
+-- [[ Vim Fugitive ]]
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gb",
@@ -103,7 +103,7 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>glo",
   ":Git log --oneline<CR>",
-  { noremap = true, desc = '[G]it Log --o[n]eline' }
+  { noremap = true, desc = '[G]it Log [O]neline' }
 )
 
 vim.api.nvim_set_keymap(
@@ -127,8 +127,6 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = '[G]it [P]u[l]l' }
 )
 
--- Git merge conflict mappings
-
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gmc",
@@ -136,20 +134,18 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = '[G]it [M]erge [C]onflict: 3 way diff split' }
 )
 
-
--- Terminal shortcuts
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>tt",
-  ":term<CR>i",
-  { noremap = true, desc = 'Open terminal' }
+  "<leader>glf",
+  ":lua vim.cmd(\"Git log --follow \" .. vim.fn.expand('%'))<CR>",
+  { noremap = true, desc = '[G]it [L]og [F]ollow current file' }
 )
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>tv",
-  ":vsplit<CR><C-w>l:term<CR>i",
-  { noremap = true, desc = 'Open terminal in new vertical window' }
+  "<leader>glof",
+  ":lua vim.cmd(\"Git log --oneline --follow \" .. vim.fn.expand('%'))<CR>",
+  { noremap = true, desc = '[G]it [L]og [O]neline [F]ollow current file' }
 )
 
 -- [[ Obsidian ]]
