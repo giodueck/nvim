@@ -33,7 +33,7 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>cd",
   ":Telescope file_browser files=false<CR>",
-  { noremap = true, desc = '[F]ind [D]irectory' }
+  { noremap = true, desc = 'Find Directory' }
 )
 
 -- Same functions but without previewer enabled, which crashes sometimes with weird and/or big files
