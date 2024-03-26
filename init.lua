@@ -24,7 +24,7 @@ require('plugins.lsp')
 -- [[ nvim-cmp setup ]]
 require('plugins.nvim-cmp')
 
--- [[ Various plugins with low to no configuration ]]
+-- [[ Various plugins have low to no configuration ]]
 require('plugins.misc')
 
 -- VimTeX configs
