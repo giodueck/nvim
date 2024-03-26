@@ -2,4 +2,4 @@
 require 'hex'.setup()
 
 -- Load colorscheme
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd('colorscheme tokyonight-moon')
