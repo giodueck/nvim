@@ -43,9 +43,9 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- List configs
--- Set trailing spaces to '~', tabs to '|' and nbsp to '␣'
+-- Set trailing spaces to '~', tabs to '▎' and nbsp to '␣'
 vim.cmd("set list")
-vim.cmd("set listchars=trail:~,tab:\\|\\ ,nbsp:␣")
+vim.cmd("set listchars=trail:~,tab:▎\\ ,nbsp:␣")
 
 -- For Obsidian
 vim.o.conceallevel=1

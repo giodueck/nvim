@@ -24,6 +24,9 @@ require('plugins.lsp')
 -- [[ nvim-cmp setup ]]
 require('plugins.nvim-cmp')
 
+-- [[ Tokyonight theme ]]
+require('plugins.tokyonight')
+
 -- [[ Various plugins have low to no configuration ]]
 require('plugins.misc')
 
