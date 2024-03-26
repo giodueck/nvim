@@ -6,6 +6,7 @@ require('ibl').setup({
   exclude = {
     filetypes = {
       'git',
+      'fugitive',
     }
   }
 })
