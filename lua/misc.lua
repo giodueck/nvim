@@ -8,3 +8,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+-- [[ Set conceallevel only for certain files ]]
+vim.api.nvim_create_augroup('DynamicConceal', { clear = true })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  pattern = 'markdown',
+  command = 'setlocal conceallevel=1',
+  group = 'DynamicConceal'
+})

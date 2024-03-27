@@ -47,9 +47,6 @@ vim.opt.expandtab = true
 vim.cmd("set list")
 vim.cmd("set listchars=trail:~,tab:▎\\ ,nbsp:␣")
 
--- For Obsidian
-vim.o.conceallevel=1
-
 -- Set linebreak makes the text wrap whole words when the line space on the screen
 -- is too small for the line, instead of only the remaining characters
 vim.cmd("set linebreak")

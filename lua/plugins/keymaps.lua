@@ -40,9 +40,9 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>sqf",
+  "<leader>fqd",
   ":lua require('telescope.builtin').find_files({previewer=false})<CR>",
-  { noremap = true, desc = '[S]earch [F]iles without previewer' }
+  { noremap = true, desc = '[F]in[d] Files without previewer' }
 )
 
 vim.api.nvim_set_keymap(
@@ -50,6 +50,13 @@ vim.api.nvim_set_keymap(
   "<leader>sqg",
   ":lua require('telescope.builtin').live_grep({previewer=false})<CR>",
   { noremap = true, desc = '[S]earch by [G]rep without previewer' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>sqw",
+  ":lua require('telescope.builtin').grep_string({previewer=false})<CR>",
+  { noremap = true, desc = '[S]earch current [W]ord without previewer' }
 )
 
 vim.api.nvim_set_keymap(
@@ -168,4 +175,12 @@ vim.api.nvim_set_keymap(
   "<leader>oa",
   ":ObsidianTags<CR>",
   { noremap = true, desc = 'Obsidian: tags' }
+)
+
+-- [[ Treesitter]]
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ts",
+  ":lua vim.treesitter.stop(vim.api.nvim_buf_get_number(0))<CR>",
+  { noremap = true, desc = 'Stop Treesitter for current buffer' }
 )

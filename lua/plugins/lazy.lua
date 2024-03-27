@@ -173,7 +173,8 @@ require('lazy').setup({
     dependencies = {
       -- Required.
       "nvim-lua/plenary.nvim",
-
+      "nvim-telescope/telescope.nvim",
+      "nvim-treesitter",
     },
     opts = {
       workspaces = {
