@@ -83,10 +83,11 @@ require('lazy').setup({
       options = {
         icons_enabled = false,
         theme = 'tokyonight',
-        component_separators = '|',
-        section_separators = '',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
       },
     },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
   { -- Add indentation guides even on blank lines
