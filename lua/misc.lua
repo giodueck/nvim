@@ -16,3 +16,16 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   command = 'setlocal conceallevel=1',
   group = 'DynamicConceal'
 })
+
+-- [[ Dynamic hybrid line numbers ]]
+vim.api.nvim_create_augroup('HybridNumberToggle', { clear = true })
+vim.api.nvim_create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave', 'WinEnter' }, {
+  pattern = '*',
+  command = 'if &nu && mode() != "i" | set rnu   | endif',
+  group = 'HybridNumberToggle',
+})
+vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave' }, {
+  pattern = '*',
+  command = 'if &nu                  | set nornu | endif',
+  group = 'HybridNumberToggle',
+})

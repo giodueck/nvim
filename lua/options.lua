@@ -43,9 +43,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- List configs
--- Set trailing spaces to '~', tabs to '▎' and nbsp to '␣'
-vim.cmd("set list")
-vim.cmd("set listchars=trail:~,tab:▎\\ ,nbsp:␣")
+-- Set trailing spaces to '·', tabs to '▎' and nbsp to '␣'
+vim.cmd("set listchars=trail:·,tab:▎\\ ,nbsp:␣")
 
 -- Set linebreak makes the text wrap whole words when the line space on the screen
 -- is too small for the line, instead of only the remaining characters
