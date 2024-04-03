@@ -13,12 +13,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Split screen and window navigation
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split' })
-vim.keymap.set("n", "<leader>h", ":wincmd h<CR>", { noremap = true, desc = 'Focus left window' })
-vim.keymap.set("n", "<leader>l", ":wincmd l<CR>", { noremap = true, desc = 'Focus right window' })
-vim.keymap.set("n", "<leader>j", ":wincmd j<CR>", { noremap = true, desc = 'Focus window below' })
-vim.keymap.set("n", "<leader>k", ":wincmd k<CR>", { noremap = true, desc = 'Focus window above' })
-vim.keymap.set("n", "<leader>.", "10<C-w>>", { noremap = true, desc = 'Increase window width' })
-vim.keymap.set("n", "<leader>,", "10<C-w><", { noremap = true, desc = 'Decrease window width' })
+vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, desc = 'Focus left window' })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, desc = 'Focus right window' })
+vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, desc = 'Focus window below' })
+vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, desc = 'Focus window above' })
+vim.keymap.set("n", "<leader>.", "9<C-w>>", { noremap = true, desc = 'Increase window width' })
+vim.keymap.set("n", "<leader>,", "9<C-w><", { noremap = true, desc = 'Decrease window width' })
 vim.keymap.set("n", "<leader>wo", "<C-w>o", { noremap = true, desc = 'Close all other windows' })
 
 -- Move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
