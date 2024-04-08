@@ -36,43 +36,6 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = 'Find Directory' }
 )
 
--- Same functions but without previewer enabled, which crashes sometimes with weird and/or big files
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fqd",
-  ":lua require('telescope.builtin').find_files({previewer=false})<CR>",
-  { noremap = true, desc = '[F]in[d] Files without previewer' }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>sqg",
-  ":lua require('telescope.builtin').live_grep({previewer=false})<CR>",
-  { noremap = true, desc = '[S]earch by [G]rep without previewer' }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>sqw",
-  ":lua require('telescope.builtin').grep_string({previewer=false})<CR>",
-  { noremap = true, desc = '[S]earch current [W]ord without previewer' }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fqb",
-  ":Telescope file_browser path=%:p:h select_buffer=true previewer=false<CR>",
-  { noremap = true, desc = '[F]ile [B]rowser in buffer path without previewer' }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fqB",
-  ":Telescope file_browser previewer=false<CR>",
-  { noremap = true, desc = '[F]ile [B]rowser in cwd without previewer' }
-)
-
 -- [[ Hex editor ]]
 vim.api.nvim_set_keymap(
   "n",
