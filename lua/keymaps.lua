@@ -19,7 +19,6 @@ vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, desc = 'Focus windo
 vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, desc = 'Focus window above' })
 vim.keymap.set("n", "<leader>.", "9<C-w>>", { noremap = true, desc = 'Increase window width' })
 vim.keymap.set("n", "<leader>,", "9<C-w><", { noremap = true, desc = 'Decrease window width' })
-vim.keymap.set("n", "<leader>wo", "<C-w>o", { noremap = true, desc = 'Close all other windows' })
 
 -- Move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
 vim.cmd("nnoremap <A-j> :m .+1<CR>==")
@@ -53,3 +52,6 @@ vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current b
 -- Vertical navigation
 vim.cmd("nnoremap <C-d> <C-d>zz")
 vim.cmd("nnoremap <C-u> <C-u>zz")
+
+-- Faster saving
+vim.keymap.set("n", "<leader>w", ":up<CR>", { noremap = true, desc = 'Save current buffer' })
