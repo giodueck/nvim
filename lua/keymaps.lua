@@ -52,6 +52,3 @@ vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current b
 -- Vertical navigation
 vim.cmd("nnoremap <C-d> <C-d>zz")
 vim.cmd("nnoremap <C-u> <C-u>zz")
-
--- Faster saving
-vim.keymap.set("n", "<leader>w", ":up<CR>", { noremap = true, desc = 'Save current buffer' })

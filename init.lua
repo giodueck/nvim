@@ -30,9 +30,12 @@ require('plugins.tokyonight')
 -- [[ Various plugins have low to no configuration ]]
 require('plugins.misc')
 
--- VimTeX configs
+-- [[ VimTeX ]]
 vim.g.maplocalleader = '\\'  -- Only really used with vimtex
 require('plugins.vimtex')
+
+-- [[ Harpoon ]]
+require('plugins.harpoon')
 
 -- [[ Keymaps which involve plugins ]]
 require('plugins.keymaps')
