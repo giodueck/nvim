@@ -13,12 +13,11 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Split screen and window navigation
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split' })
-vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, desc = 'Focus left window' })
-vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, desc = 'Focus right window' })
-vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, desc = 'Focus window below' })
-vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, desc = 'Focus window above' })
+vim.keymap.set("n", "<leader>s", ":split<CR><C-w>j", { noremap = true, desc = '[S]plit' })
 vim.keymap.set("n", "<leader>.", "9<C-w>>", { noremap = true, desc = 'Increase window width' })
 vim.keymap.set("n", "<leader>,", "9<C-w><", { noremap = true, desc = 'Decrease window width' })
+vim.keymap.set("n", "<leader>-", "5<C-w>-", { noremap = true, desc = 'Increase window height' })
+vim.keymap.set("n", "<leader>=", "5<C-w>+", { noremap = true, desc = 'Decrease window height' })
 
 -- Move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
 vim.cmd("nnoremap <A-j> :m .+1<CR>==")
@@ -30,20 +29,6 @@ vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
 
 -- Terminal mode
 vim.cmd("tnoremap <Esc> <C-\\><C-n>")
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tt",
-  ":term<CR>i",
-  { noremap = true, desc = 'Open terminal' }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tv",
-  ":vsplit<CR><C-w>l:term<CR>i",
-  { noremap = true, desc = 'Open terminal in new vertical window' }
-)
 
 -- Destroy buffer
 --  Changed to "gq": some vim-fugitive windows have this command, but not all for some reason
