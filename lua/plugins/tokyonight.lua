@@ -40,5 +40,17 @@ require('tokyonight').setup({
   on_highlights = function(highlights, colors) end,
 })
 
+vim.api.nvim_create_augroup('DimInactiveBackground', { clear = true })
+vim.api.nvim_create_autocmd({ 'FocusGained' }, {
+  pattern = '*',
+  command = 'hi Normal guifg=#c0caf5 guibg=#1a1b26',
+  group = 'DimInactiveBackground',
+})
+vim.api.nvim_create_autocmd({ 'FocusLost' }, {
+  pattern = '*',
+  command = 'hi Normal guifg=#c0caf5 guibg=#16161e',
+  group = 'DimInactiveBackground',
+})
+
 -- Load colorscheme
 vim.cmd('colorscheme tokyonight-night')
