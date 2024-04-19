@@ -251,4 +251,15 @@ require('lazy').setup({
     dependencies = { "nvim-lua/plenary.nvim" }
   },
 
+  -- AsyncTasks: VSCode-like tasks
+  {
+    "skywind3000/asynctasks.vim",
+    dependencies = { "skywind3000/asyncrun.vim" }
+  },
+
+  -- Telescope async tasks extension
+  {
+    "GustavoKatel/telescope-asynctasks.nvim"
+  },
+
 }, {})
