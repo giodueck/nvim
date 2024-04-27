@@ -37,3 +37,6 @@ vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current b
 -- Vertical navigation
 vim.cmd("nnoremap <C-d> <C-d>zz")
 vim.cmd("nnoremap <C-u> <C-u>zz")
+
+-- Easier to reach escape
+vim.cmd("inoremap kj <Esc>")
