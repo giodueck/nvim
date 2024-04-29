@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'  -- Only really used with vimtex
 
 -- Install package manager
 require('plugins.lazy')
@@ -31,7 +32,6 @@ require('plugins.tokyonight')
 require('plugins.misc')
 
 -- [[ VimTeX ]]
-vim.g.maplocalleader = '\\'  -- Only really used with vimtex
 require('plugins.vimtex')
 
 -- [[ Harpoon ]]

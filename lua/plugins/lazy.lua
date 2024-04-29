@@ -159,13 +159,10 @@ require('lazy').setup({
     init = function()
       --vim.g.vimtex_options = "go here"
     end,
-    lazy = true,
-    event = {
-      -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-      -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-      "BufEnter *.tex",
-      "BufNewFile *.tex",
-    },
+    -- event = {
+    --   "BufEnter *.tex",
+    --   "BufNewFile *.tex",
+    -- },
   },
 
   -- Obsidian
