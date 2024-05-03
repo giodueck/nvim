@@ -262,4 +262,9 @@ require('lazy').setup({
     "GustavoKatel/telescope-asynctasks.nvim"
   },
 
+  -- Clipboard sharing with tmux, helpful mostly just for remote sessions
+  {
+    "roxma/vim-tmux-clipboard"
+  },
+
 }, {})
