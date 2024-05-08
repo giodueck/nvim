@@ -24,6 +24,8 @@ require('lazy').setup({
 
   -- Surround text in " ' { [ ( or html tags
   'tpope/vim-surround',
+  -- Make the '.' command work with vim-surround
+  'tpope/vim-repeat',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.

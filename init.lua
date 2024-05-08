@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'  -- Only really used with vimtex
 
--- Install package manager
+-- Install plugin manager
 require('plugins.lazy')
 
 -- [[ Setting options ]]
