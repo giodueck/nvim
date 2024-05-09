@@ -61,3 +61,11 @@ require('nvim-treesitter.configs').setup {
     -- },
   },
 }
+
+-- Keymaps
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ts",
+  ":lua vim.treesitter.stop(vim.api.nvim_buf_get_number(0))<CR>",
+  { noremap = true, desc = 'Stop Treesitter for current buffer' }
+)

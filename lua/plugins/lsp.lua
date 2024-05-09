@@ -90,3 +90,6 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- Keymaps
+vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", { noremap = true, desc = "[F]ormat [F]ile" })

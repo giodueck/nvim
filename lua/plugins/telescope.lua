@@ -40,3 +40,41 @@ require('telescope').setup {
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'file_browser')
+
+-- Keymaps
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+vim.keymap.set('n', '<leader>fd', require('telescope.builtin').find_files, { desc = '[F]in[d] Files' })
+vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fb",
+  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  { noremap = true, desc = '[F]ile [B]rowser in buffer path' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>fB",
+  ":Telescope file_browser<CR>",
+  { noremap = true, desc = '[F]ile [B]rowser in cwd' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>cd",
+  ":Telescope file_browser files=false<CR>",
+  { noremap = true, desc = 'Find Directory' }
+)

@@ -13,6 +13,7 @@ require('keymaps')
 -- [[ Miscelaneous snippets ]]
 require('misc')
 
+-- Essential basic plugins
 -- [[ Configure Telescope ]]
 require('plugins.telescope')
 
@@ -22,20 +23,27 @@ require('plugins.treesitter')
 -- [[ LSP settings ]]
 require('plugins.lsp')
 
--- [[ nvim-cmp setup ]]
+-- Various plugins
+-- [[ Tasks plugin ]]
+require('plugins.async_tasks')
+
+-- [[ Vim Fugitive ]]
+require('plugins.git')
+
+-- [[ Indentation highlighting ]]
+require('plugins.indent_blankline')
+
+require('plugins.harpoon')
+
+-- [[ Hex editor ]]
+require('plugins.hex')
+
+-- [[ Snippets ]]
 require('plugins.nvim-cmp')
+
+require('plugins.obsidian')
 
 -- [[ Tokyonight theme ]]
 require('plugins.tokyonight')
 
--- [[ Various plugins have low to no configuration ]]
-require('plugins.misc')
-
--- [[ VimTeX ]]
 require('plugins.vimtex')
-
--- [[ Harpoon ]]
-require('plugins.harpoon')
-
--- [[ Keymaps which involve plugins ]]
-require('plugins.keymaps')
