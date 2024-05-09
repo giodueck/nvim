@@ -38,9 +38,8 @@ vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current b
 vim.cmd("nnoremap <C-d> <C-d>zz")
 vim.cmd("nnoremap <C-u> <C-u>zz")
 
--- Easier to reach escape in insert or visual mode
+-- Easier to reach escape in insert mode
 vim.cmd("inoremap kj <Esc>")
-vim.cmd("vnoremap kj <Esc>")
 
 -- Open and close quickfix window
 vim.cmd("nnoremap <leader>co :cope<CR>")
