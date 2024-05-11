@@ -11,8 +11,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Set conceallevel only for certain files ]]
 vim.api.nvim_create_augroup('DynamicConceal', { clear = true })
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = 'markdown',
+vim.api.nvim_create_autocmd({ 'BufReadPre', 'BufNewFile' }, {
+  pattern = vim.fn.expand "~" .. "/Obsidian/**.md",
   command = 'setlocal conceallevel=1',
   group = 'DynamicConceal'
 })
