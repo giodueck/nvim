@@ -5,5 +5,8 @@ require('ibl').setup({
       'git',
       'fugitive',
     }
-  }
+  },
+  indent = {
+    char = '┊',
+  },
 })

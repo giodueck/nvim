@@ -45,7 +45,7 @@ vim.opt.expandtab = true
 -- List configs
 -- Set whitespace and invisible chars
 vim.cmd("set list")
-vim.cmd("set listchars=trail:~,tab:▎\\ ,eol:↵,nbsp:␣")
+vim.cmd("set listchars=trail:~,tab:┊\\ ,eol:↵,nbsp:␣")
 
 -- Set linebreak makes the text wrap whole words when the line space on the screen
 -- is too small for the line, instead of only the remaining characters
