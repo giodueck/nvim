@@ -69,3 +69,9 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = '[G]it [L]og [O]neline [F]ollow current file' }
 )
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ga",
+  ":Git add %<CR>",
+  { noremap = true, desc = '[G]it [A]dd current buffer' }
+)
