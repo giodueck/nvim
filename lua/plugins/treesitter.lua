@@ -1,6 +1,12 @@
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'vimdoc', 'vim' },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- List of parsers to ignore installing (or "all")
+  ignore_install = { "javascript" },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -65,7 +71,7 @@ require('nvim-treesitter.configs').setup {
 -- Keymaps
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>ts",
+  "<leader>tsq",
   ":lua vim.treesitter.stop(vim.api.nvim_buf_get_number(0))<CR>",
   { noremap = true, desc = 'Stop Treesitter for current buffer' }
 )
