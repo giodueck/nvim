@@ -40,6 +40,23 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
+  enabled = function()
+    local context = require 'cmp.config.context'
+    -- keep command mode completion enabled when cursor is in a comment
+    if vim.api.nvim_get_mode().mode == 'c' then
+      return true
+    else
+      -- disable completion in comments
+      return not context.in_treesitter_capture("comment")
+        and not context.in_syntax_group("Comment")
+      -- disable completion in strings
+        and not context.in_treesitter_capture("string")
+        and not context.in_syntax_group("String")
+      -- disable completion when recording or executing macros
+        and not (vim.fn.reg_recording() ~= "")
+        and not (vim.fn.reg_executing() ~= "")
+    end
+  end,
 }
 
 -- Custom snippets
