@@ -42,5 +42,5 @@ vim.cmd("nnoremap <C-u> <C-u>zz")
 vim.cmd("inoremap kj <Esc>")
 
 -- Open and close quickfix window
-vim.cmd("nnoremap <leader>co :cope<CR>")
-vim.cmd("nnoremap <leader>cc :cclo<CR>")
+vim.keymap.set("n", "<leader>co", ":cope<CR>", { noremap = true, desc = 'Open quickfix window' })
+vim.keymap.set("n", "<leader>cc", ":cclo<CR>", { noremap = true, desc = 'Close quickfix window' })

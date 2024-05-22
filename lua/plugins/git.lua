@@ -16,15 +16,22 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gl",
-  ":Git log<CR>",
-  { noremap = true, desc = '[G]it [L]og' }
+  ":Git log --oneline<CR>",
+  { noremap = true, desc = '[G]it [L]og --oneline' }
 )
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>glo",
-  ":Git log --oneline<CR>",
-  { noremap = true, desc = '[G]it Log [O]neline' }
+  "<leader>gf",
+  ":lua vim.cmd(\"Git log --oneline --follow \" .. vim.fn.expand('%'))<CR>",
+  { noremap = true, desc = '[G]it Log [F]ollow current file' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gff",
+  ":lua vim.cmd(\"Git log --follow \" .. vim.fn.expand('%'))<CR>",
+  { noremap = true, desc = '[G]it Log [F]ollow current file' }
 )
 
 vim.api.nvim_set_keymap(
@@ -57,21 +64,7 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>glf",
-  ":lua vim.cmd(\"Git log --follow \" .. vim.fn.expand('%'))<CR>",
-  { noremap = true, desc = '[G]it [L]og [F]ollow current file' }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>glof",
-  ":lua vim.cmd(\"Git log --oneline --follow \" .. vim.fn.expand('%'))<CR>",
-  { noremap = true, desc = '[G]it [L]og [O]neline [F]ollow current file' }
-)
-
-vim.api.nvim_set_keymap(
-  "n",
   "<leader>ga",
   ":Git add %<CR>",
-  { noremap = true, desc = '[G]it [A]dd current buffer' }
+  { noremap = true, desc = '[G]it [A]dd current file' }
 )
