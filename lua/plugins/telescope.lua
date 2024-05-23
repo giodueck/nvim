@@ -11,6 +11,8 @@ require('telescope').setup {
         ["<M-p>"] = action_layout.toggle_preview,
       }
     },
+    prompt_prefix = ' ',
+    selection_caret = '󰼛 ',
   },
   pickers = {
     buffers = {

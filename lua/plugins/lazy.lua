@@ -301,6 +301,7 @@ require('lazy').setup({
       { "g?O", mode = 'n' },
       { "g?v", mode = 'x' },
       { "g?V", mode = 'x' },
+      { "g?d", mode = 'n' },
     },
     cmd = {
       "ToggleCommentDebugPrints",
