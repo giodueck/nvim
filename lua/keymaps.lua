@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Split screen and window navigation
 vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split' })
-vim.keymap.set("n", "<leader>s", ":split<CR><C-w>j", { noremap = true, desc = '[S]plit' })
+vim.keymap.set("n", "<leader>S", ":split<CR><C-w>j", { noremap = true, desc = '[S]plit' })
 vim.keymap.set("n", "<leader>.", "9<C-w>>", { noremap = true, desc = 'Increase window width' })
 vim.keymap.set("n", "<leader>,", "9<C-w><", { noremap = true, desc = 'Decrease window width' })
 vim.keymap.set("n", "<leader>-", "5<C-w>-", { noremap = true, desc = 'Increase window height' })

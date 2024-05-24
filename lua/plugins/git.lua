@@ -22,14 +22,21 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>gf",
-  ":lua vim.cmd(\"Git log --oneline --follow \" .. vim.fn.expand('%'))<CR>",
-  { noremap = true, desc = '[G]it Log [F]ollow current file' }
+  "<leader>gL",
+  ":Git log<CR>",
+  { noremap = true, desc = '[G]it [L]og' }
 )
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>gff",
+  "<leader>gf",
+  ":lua vim.cmd(\"Git log --oneline --follow \" .. vim.fn.expand('%'))<CR>",
+  { noremap = true, desc = '[G]it Log --oneline [F]ollow current file' }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gF",
   ":lua vim.cmd(\"Git log --follow \" .. vim.fn.expand('%'))<CR>",
   { noremap = true, desc = '[G]it Log [F]ollow current file' }
 )
