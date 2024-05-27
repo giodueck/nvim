@@ -11,6 +11,21 @@ vim.o.mouse = 'a'
 --  Remove this option if you want your OS clipboard to remain independent.
 vim.o.clipboard = 'unnamedplus'
 
+-- Enable OSC-52 support when connected via SSH
+if os.getenv('SSH_CONNECTION') then
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+      ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    },
+    paste = {
+      ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    },
+  }
+end
+
 -- Enable break indent
 vim.o.breakindent = true
 
