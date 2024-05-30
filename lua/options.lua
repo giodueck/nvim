@@ -11,8 +11,8 @@ vim.o.mouse = 'a'
 --  Remove this option if you want your OS clipboard to remain independent.
 vim.o.clipboard = 'unnamedplus'
 
--- Enable OSC-52 support when connected via SSH
-if os.getenv('SSH_CONNECTION') then
+-- Enable OSC-52 support when connected via SSH or inside tmux
+if os.getenv('SSH_CONNECTION') or os.getenv('TMUX') then
   vim.g.clipboard = {
     name = 'OSC 52',
     copy = {
