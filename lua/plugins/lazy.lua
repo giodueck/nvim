@@ -300,8 +300,6 @@ require('lazy').setup({
       { "g?d", mode = 'n' },
     },
     cmd = {
-      "ToggleCommentDebugPrints",
-      "DeleteDebugPrints",
     },
     version = "*"
   },
