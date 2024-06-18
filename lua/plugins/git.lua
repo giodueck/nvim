@@ -72,6 +72,6 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>ga",
-  ":Git add %<CR>",
-  { noremap = true, desc = '[G]it [A]dd current file' }
+  ":Git add % | doautocmd BufWritePost<CR>",
+  { noremap = true, desc = '[G]it [A]dd current file', silent = true }
 )
