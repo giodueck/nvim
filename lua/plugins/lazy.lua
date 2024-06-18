@@ -45,7 +45,29 @@ require('lazy').setup({
       },
 
       -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
+      -- 'folke/neodev.nvim', -- this is now deprecated in favor of lazydev
+      {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+          library = {
+            -- See the configuration section for more details
+            -- Load luvit types when the `vim.uv` word is found
+            { path = "luvit-meta/library", words = { "vim%.uv" } },
+          },
+        },
+      },
+      { "Bilal2453/luvit-meta",      lazy = true }, -- optional `vim.uv` typings
+      {                                    -- optional completion source for require statements and module annotations
+        "hrsh7th/nvim-cmp",
+        opts = function(_, opts)
+          opts.sources = opts.sources or {}
+          table.insert(opts.sources, {
+            name = "lazydev",
+            group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+          })
+        end,
+      },
 
       -- In an attempt to make Go LSP work
       { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
@@ -259,8 +281,8 @@ require('lazy').setup({
   {
     "andrewferrier/debugprint.nvim",
     dependencies = {
-        "echasnovski/mini.nvim", -- Needed to enable :ToggleCommentDebugPrints for NeoVim <= 0.9
-        "nvim-treesitter/nvim-treesitter" -- Needed to enable treesitter for NeoVim 0.8
+      "echasnovski/mini.nvim",            -- Needed to enable :ToggleCommentDebugPrints for NeoVim <= 0.9
+      "nvim-treesitter/nvim-treesitter"   -- Needed to enable treesitter for NeoVim 0.8
     },
     opts = {
       keymaps = {
