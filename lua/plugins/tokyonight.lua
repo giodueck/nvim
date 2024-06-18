@@ -52,5 +52,11 @@ vim.api.nvim_create_autocmd({ 'FocusLost' }, {
   group = 'DimInactiveBackground',
 })
 
+-- New GitSigns HL groups for staged changes, not yet neatly integrated into TokyoNight
+vim.cmd('hi GitSignsStagedAdd guifg=#9ece6a')
+vim.cmd('hi GitSignsStagedChange guifg=#7aa2f7')
+vim.cmd('hi GitSignsStagedDelete guifg=#f7768e')
+vim.cmd('hi GitSignsStagedTopDelete guifg=#f7768e')
+
 -- Load colorscheme
 vim.cmd('colorscheme tokyonight-night')
