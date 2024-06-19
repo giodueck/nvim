@@ -268,7 +268,7 @@ require('lazy').setup({
   -- AsyncTasks: VSCode-like tasks
   {
     "skywind3000/asynctasks.vim",
-    dependencies = { "skywind3000/asyncrun.vim" }
+    dependencies = { "skywind3000/asyncrun.vim" },
   },
 
   -- Telescope async tasks extension
