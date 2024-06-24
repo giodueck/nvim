@@ -170,11 +170,6 @@ require('lazy').setup({
     init = function()
       --vim.g.vimtex_options = "go here"
     end,
-    -- event = {
-    --   "BufEnter *.tex",
-    --   "BufNewFile *.tex",
-    -- },
-    lazy = true,
   },
 
   -- Obsidian
