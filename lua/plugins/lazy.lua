@@ -156,7 +156,6 @@ require('lazy').setup({
   -- Hex editor
   {
     'RaafatTurki/hex.nvim',
-    lazy = true,
   },
 
   -- Telescope file browser
