@@ -170,6 +170,7 @@ require('lazy').setup({
     init = function()
       --vim.g.vimtex_options = "go here"
     end,
+    dependencies = { "micangl/cmp-vimtex" },
   },
 
   -- Obsidian
