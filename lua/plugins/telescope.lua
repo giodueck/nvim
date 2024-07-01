@@ -24,10 +24,12 @@ require('telescope').setup {
         ["<esc>"] = actions.close,
         ["<M-p>"] = action_layout.toggle_preview,
         ["<S-CR>"] = select_one_or_multi,
+        ["<C-a>"] = actions.toggle_all,
       },
       n = {
         ["<M-p>"] = action_layout.toggle_preview,
         ["<S-CR>"] = select_one_or_multi,
+        ["<C-a>"] = actions.toggle_all,
       }
     },
     prompt_prefix = ' ',

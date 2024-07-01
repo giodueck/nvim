@@ -16,8 +16,8 @@ vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '
 vim.keymap.set("n", "<leader>S", ":split<CR><C-w>j", { noremap = true, desc = '[S]plit' })
 vim.keymap.set("n", "<leader>.", "9<C-w>>", { noremap = true, desc = 'Increase window width' })
 vim.keymap.set("n", "<leader>,", "9<C-w><", { noremap = true, desc = 'Decrease window width' })
-vim.keymap.set("n", "<leader>-", "5<C-w>-", { noremap = true, desc = 'Increase window height' })
-vim.keymap.set("n", "<leader>=", "5<C-w>+", { noremap = true, desc = 'Decrease window height' })
+vim.keymap.set("n", "<leader>=", "5<C-w>+", { noremap = true, desc = 'Increase window height' })
+vim.keymap.set("n", "<leader>-", "5<C-w>-", { noremap = true, desc = 'Decrease window height' })
 
 -- Move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
 vim.cmd("nnoremap <A-j> :m .+1<CR>==")
