@@ -28,9 +28,7 @@ require('tokyonight').setup({
   on_colors = function(colors)
     colors.git.add = colors.green
     colors.git.delete = colors.red
-    colors.gitSigns.add = colors.green
-    colors.gitSigns.delete = colors.red
-    colors.gitSigns.change = colors.blue
+    colors.git.change = colors.blue
   end,
 
   --- You can override specific highlights to use other groups or a hex color
