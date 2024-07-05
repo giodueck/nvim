@@ -3,7 +3,7 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>ta",
   ":Telescope asynctasks all<CR>",
-  { noremap = true, desc = "List tasks" }
+  { noremap = true, desc = "List tasks", silent = true }
 )
 
 -- Repeat last task
@@ -11,7 +11,7 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>tl",
   ":AsyncTaskLast<CR>",
-  { noremap = true, desc = "Run last task" }
+  { noremap = true, desc = "Run last task", silent = true }
 )
 -- require('telescope').extensions.asynctasks.all()
 

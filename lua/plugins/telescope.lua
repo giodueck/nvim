@@ -89,19 +89,19 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>fb",
   ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-  { noremap = true, desc = '[F]ile [B]rowser in buffer path' }
+  { noremap = true, desc = '[F]ile [B]rowser in buffer path', silent = true }
 )
 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>fB",
   ":Telescope file_browser<CR>",
-  { noremap = true, desc = '[F]ile [B]rowser in cwd' }
+  { noremap = true, desc = '[F]ile [B]rowser in cwd', silent = true }
 )
 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>cd",
   ":Telescope file_browser files=false<CR>",
-  { noremap = true, desc = 'Find Directory' }
+  { noremap = true, desc = 'Find Directory', silent = true }
 )

@@ -12,8 +12,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Split screen and window navigation
-vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split' })
-vim.keymap.set("n", "<leader>S", ":split<CR><C-w>j", { noremap = true, desc = '[S]plit' })
+vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split', silent = true })
+vim.keymap.set("n", "<leader>S", ":split<CR><C-w>j", { noremap = true, desc = '[S]plit', silent = true })
 vim.keymap.set("n", "<leader>.", "9<C-w>>", { noremap = true, desc = 'Increase window width' })
 vim.keymap.set("n", "<leader>,", "9<C-w><", { noremap = true, desc = 'Decrease window width' })
 vim.keymap.set("n", "<leader>=", "5<C-w>+", { noremap = true, desc = 'Increase window height' })
@@ -32,7 +32,7 @@ vim.cmd("tnoremap <Esc> <C-\\><C-n>")
 
 -- Destroy buffer
 --  Changed to "gq": some vim-fugitive windows have this command, but not all for some reason
-vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current buffer' })
+vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current buffer', silent = true })
 
 -- Vertical navigation
 vim.cmd("nnoremap <C-d> <C-d>zz")
@@ -42,5 +42,5 @@ vim.cmd("nnoremap <C-u> <C-u>zz")
 vim.cmd("inoremap kj <Esc>")
 
 -- Open and close quickfix window
-vim.keymap.set("n", "<leader>co", ":cope<CR>", { noremap = true, desc = 'Open quickfix window' })
-vim.keymap.set("n", "<leader>cc", ":cclo<CR>", { noremap = true, desc = 'Close quickfix window' })
+vim.keymap.set("n", "<leader>co", ":cope<CR>", { noremap = true, desc = 'Open quickfix window', silent = true })
+vim.keymap.set("n", "<leader>cc", ":cclo<CR>", { noremap = true, desc = 'Close quickfix window', silent = true })

@@ -73,5 +73,5 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>tsq",
   ":lua vim.treesitter.stop(vim.api.nvim_buf_get_number(0))<CR>",
-  { noremap = true, desc = 'Stop Treesitter for current buffer' }
+  { noremap = true, desc = 'Stop Treesitter for current buffer', silent = true }
 )
