@@ -47,3 +47,7 @@ require('plugins.obsidian')
 require('plugins.tokyonight')
 
 require('plugins.vimtex')
+
+-- Keymap help
+-- [[ Which-key ]]
+require('plugins.which-key')
