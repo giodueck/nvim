@@ -12,8 +12,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Split screen and window navigation
-vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = '[V]ertical split window', silent = true })
-vim.keymap.set("n", "<leader>S", ":split<CR><C-w>j", { noremap = true, desc = '[S]plit window', silent = true })
+vim.keymap.set("n", "<leader>v", ":vsplit<CR><C-w>l", { noremap = true, desc = 'Split window vertically', silent = true })
+vim.keymap.set("n", "<leader>S", ":split<CR><C-w>j", { noremap = true, desc = 'Split window', silent = true })
 vim.keymap.set("n", "<leader>.", "9<C-w>>", { noremap = true, desc = 'Increase window width' })
 vim.keymap.set("n", "<leader>,", "9<C-w><", { noremap = true, desc = 'Decrease window width' })
 vim.keymap.set("n", "<leader>=", "5<C-w>+", { noremap = true, desc = 'Increase window height' })

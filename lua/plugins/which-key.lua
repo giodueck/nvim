@@ -38,4 +38,7 @@ wk.add({
   { "ys", mode = "n", desc = "Surround: surround", icon = "" },
   { "yS", mode = "n", desc = "Surround: Surround", icon = "" },
   { "yss", mode = "n", desc = "Surround: surround line", icon = "" },
+
+  { "<leader>ta", mode = "n", desc = "Tasks: list", icon = "" },
+  { "<leader>tl", mode = "n", desc = "Tasks: run last", icon = "" },
 })
