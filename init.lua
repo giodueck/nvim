@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'  -- Only really used with vimtex
 
--- Install plugin manager
+-- Install plugin manager and plugins
 require('plugins.lazy')
 
 -- [[ Setting options ]]
@@ -42,6 +42,9 @@ require('plugins.hex')
 require('plugins.nvim-cmp')
 
 require('plugins.obsidian')
+
+-- [[ Tmux integration ]]
+require('plugins.tmux')
 
 -- [[ Tokyonight theme ]]
 require('plugins.tokyonight')

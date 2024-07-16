@@ -20,15 +20,16 @@ vim.keymap.set("n", "<leader>=", "5<C-w>+", { noremap = true, desc = 'Increase w
 vim.keymap.set("n", "<leader>-", "5<C-w>-", { noremap = true, desc = 'Decrease window height' })
 
 -- Move lines up or down in normal, insert or visual modes with <A-j> and <A-k>
-vim.cmd("nnoremap <A-j> :m .+1<CR>==")
-vim.cmd("nnoremap <A-k> :m .-2<CR>==")
-vim.cmd("inoremap <A-j> <Esc>:m .+1<CR>==gi")
-vim.cmd("inoremap <A-k> <Esc>:m .-2<CR>==gi")
-vim.cmd("vnoremap <A-j> :m '>+1<CR>gv=gv")
-vim.cmd("vnoremap <A-k> :m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, desc = "Shift line down", silent = true })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, desc = "Shift line up", silent = true })
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, desc = "Shift line down", silent = true })
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, desc = "Shift line up", silent = true })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, desc = "Shift selected lines down", silent = true })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, desc = "Shift selected lines up", silent = true })
 
 -- Terminal mode
-vim.cmd("tnoremap <Esc> <C-\\><C-n>")
+-- vim.cmd("tnoremap <Esc> <C-\\><C-n>")
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, desc = "Escape to normal mode", silent = true })
 
 -- Destroy buffer
 --  Changed to "gq": some vim-fugitive windows have this command, but not all for some reason
