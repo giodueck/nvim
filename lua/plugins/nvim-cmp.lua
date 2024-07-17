@@ -49,9 +49,9 @@ cmp.setup {
       -- disable completion in comments
       return not context.in_treesitter_capture("comment")
         and not context.in_syntax_group("Comment")
-      -- disable completion in strings
-        and not context.in_treesitter_capture("string")
-        and not context.in_syntax_group("String")
+      -- disable completion in strings, except in lua
+        and (not context.in_treesitter_capture("string") or vim.bo.filetype == "lua")
+        and (not context.in_syntax_group("String") or vim.bo.filetype == "lua")
       -- disable completion when recording or executing macros
         and not (vim.fn.reg_recording() ~= "")
         and not (vim.fn.reg_executing() ~= "")

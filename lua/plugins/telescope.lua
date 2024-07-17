@@ -17,6 +17,20 @@ local select_one_or_multi = function(prompt_bufnr)
   end
 end
 
+-- Yank the base name of the file under the cursor
+local yank_file_basename = function(prompt_bufnr)
+  local entry = require('telescope.actions.state').get_selected_entry()
+  vim.fn.setreg('"', entry.ordinal)
+  vim.schedule(function () print(entry.ordinal .. " sent to clipboard") end)
+end
+
+-- Yank the full name of the file under the cursor
+local yank_file_name = function(prompt_bufnr)
+  local entry = require('telescope.actions.state').get_selected_entry()
+  vim.fn.setreg('"', entry.path)
+  vim.schedule(function () print(entry.path .. " sent to clipboard") end)
+end
+
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -27,7 +41,7 @@ require('telescope').setup {
         ["<C-a>"] = actions.toggle_all,
       },
       n = {
-        ["<M-p>"] = action_layout.toggle_preview,
+        ["p"] = action_layout.toggle_preview,
         ["<S-CR>"] = select_one_or_multi,
         ["<C-a>"] = actions.toggle_all,
       }
@@ -52,10 +66,12 @@ require('telescope').setup {
       hijack_netrw = true,
       mappings = {
         ["i"] = {
-          -- custom mappings here
+          ["<M-n>"] = yank_file_basename,
+          ["<M-N>"] = yank_file_name,
         },
         ["n"] = {
-          -- custom mappings here
+          ["n"] = yank_file_basename,
+          ["N"] = yank_file_name,
         },
       },
       hidden = true,
