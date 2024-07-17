@@ -18,17 +18,19 @@ local select_one_or_multi = function(prompt_bufnr)
 end
 
 -- Yank the base name of the file under the cursor
-local yank_file_basename = function(prompt_bufnr)
+local yank_file_basename = function()
   local entry = require('telescope.actions.state').get_selected_entry()
-  vim.fn.setreg('"', entry.ordinal)
+  vim.fn.setreg('*', entry.ordinal)
   vim.schedule(function () print(entry.ordinal .. " sent to clipboard") end)
 end
 
--- Yank the full name of the file under the cursor
-local yank_file_name = function(prompt_bufnr)
+-- Yank the cwd-relative name of the file under the cursor
+local yank_file_name = function()
   local entry = require('telescope.actions.state').get_selected_entry()
-  vim.fn.setreg('"', entry.path)
-  vim.schedule(function () print(entry.path .. " sent to clipboard") end)
+  local prefix = entry.Path._cwd .. entry.Path._sep
+  local filename = string.gsub(entry.path, prefix, "", 1)
+  vim.fn.setreg('*', filename)
+  vim.schedule(function () print(filename .. " sent to clipboard") end)
 end
 
 require('telescope').setup {
