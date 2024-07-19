@@ -46,6 +46,7 @@ vim.cmd("inoremap kj <Esc>")
 vim.keymap.set("n", "<leader>co", ":cope<CR>", { noremap = true, desc = 'Open quickfix window', silent = true })
 vim.keymap.set("n", "<leader>cc", ":cclo<CR>", { noremap = true, desc = 'Close quickfix window', silent = true })
 
--- Navigate tabs
+-- Tabs
 vim.keymap.set("n", "<leader><C-i>[", ":tabp<CR>", { noremap = true, desc = "Go to previous tab", silent = true })
 vim.keymap.set("n", "<leader><C-i>]", ":tabn<CR>", { noremap = true, desc = "Go to next tab", silent = true })
+vim.keymap.set("n", "<leader><C-i><C-i>", ":tabnew<CR>", { noremap = true, desc = "Open new tab", silent = true })
