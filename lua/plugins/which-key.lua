@@ -3,6 +3,7 @@ wk.add({
   { "j", mode = "n", hidden = true },
   { "k", mode = "n", hidden = true },
   { "<leader>", group = "leader" },
+  { "<leader><C-i>", mode = "n", desc = "tabs" },
 
   { "<leader>f", group = "file" },
   { "<leader>g", group = "git" },
