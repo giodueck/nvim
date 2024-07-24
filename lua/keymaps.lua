@@ -35,6 +35,9 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, desc = "Escape to 
 --  Changed to "gq": some vim-fugitive windows have this command, but not all for some reason
 vim.keymap.set("n", "gq", ":bd<CR>", { noremap = true, desc = 'Destroy current buffer', silent = true })
 
+-- Quit without destroying buffer
+vim.keymap.set("n", "Q", ":q<CR>", { noremap = true, desc = 'Quit', silent = true })
+
 -- Vertical navigation
 vim.cmd("nnoremap <C-d> <C-d>zz")
 vim.cmd("nnoremap <C-u> <C-u>zz")
