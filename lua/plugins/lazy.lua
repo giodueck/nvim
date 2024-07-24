@@ -58,7 +58,7 @@ require('lazy').setup({
         },
       },
       { "Bilal2453/luvit-meta",      lazy = true }, -- optional `vim.uv` typings
-      {                                    -- optional completion source for require statements and module annotations
+      {                                             -- optional completion source for require statements and module annotations
         "hrsh7th/nvim-cmp",
         opts = function(_, opts)
           opts.sources = opts.sources or {}
@@ -80,7 +80,8 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',
+  {
+    'folke/which-key.nvim',
     opts = {
       expand = 1,
     },
@@ -114,10 +115,24 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'tokyonight',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
+      },
+      tabline = {
+        lualine_b = {
+          { 'tabs', mode = 2, max_length = vim.o.columns },
+          {
+            function()
+              vim.o.showtabline = 1
+              return ''
+              --HACK: lualine will set &showtabline to 2 if you have configured
+              --lualine for displaying tabline. We want to restore the default
+              --behavior here.
+            end,
+          },
+        },
       },
     },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -267,8 +282,8 @@ require('lazy').setup({
   {
     "andrewferrier/debugprint.nvim",
     dependencies = {
-      "echasnovski/mini.nvim",            -- Needed to enable :ToggleCommentDebugPrints for NeoVim <= 0.9
-      "nvim-treesitter/nvim-treesitter"   -- Needed to enable treesitter for NeoVim 0.8
+      "echasnovski/mini.nvim",          -- Needed to enable :ToggleCommentDebugPrints for NeoVim <= 0.9
+      "nvim-treesitter/nvim-treesitter" -- Needed to enable treesitter for NeoVim 0.8
     },
     opts = {
       keymaps = {
