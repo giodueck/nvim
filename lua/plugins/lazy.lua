@@ -122,20 +122,14 @@ require('lazy').setup({
       },
       tabline = {
         lualine_b = {
-          { 'tabs', mode = 2, max_length = vim.o.columns },
           {
-            function()
-              vim.o.showtabline = 1
-              return ''
-              --HACK: lualine will set &showtabline to 2 if you have configured
-              --lualine for displaying tabline. We want to restore the default
-              --behavior here.
-            end,
+            'tabs', mode = 2, max_length = vim.o.columns,
           },
         },
       },
     },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    lazy = false,
   },
 
   { -- Add indentation guides even on blank lines
