@@ -84,6 +84,7 @@ require('lazy').setup({
     'folke/which-key.nvim',
     opts = {
       expand = 1,
+      delay = 500,
     },
     dependencies = { 'nvim-tree/nvim-web-devicons', },
   },
