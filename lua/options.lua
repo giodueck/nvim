@@ -51,17 +51,17 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Custom default tab options
-vim.opt.colorcolumn = '120'
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.colorcolumn = '120'
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
 -- List configs
 -- Set whitespace and invisible chars
-vim.cmd("set list")
+vim.o.list = true
 vim.cmd("set listchars=trail:~,tab:┊\\ ,eol:↵,nbsp:␣")
 
 -- Set linebreak makes the text wrap whole words when the line space on the screen
 -- is too small for the line, instead of only the remaining characters
-vim.cmd("set linebreak")
+vim.o.linebreak = true
