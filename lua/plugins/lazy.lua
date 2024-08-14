@@ -171,6 +171,9 @@ require('lazy').setup({
   -- Hex editor
   {
     'RaafatTurki/hex.nvim',
+    opts = {
+      is_file_binary_post_read = function() return false end
+    },
   },
 
   -- Telescope file browser
