@@ -322,4 +322,13 @@ require('lazy').setup({
     version = "*"
   },
 
+  -- Quick open buffer navigation
+  {
+    "leath-dub/snipe.nvim",
+    keys = {
+      { "<leader>b", function() require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu" }
+    },
+    opts = {}
+  },
+
 }, {})
