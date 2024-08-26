@@ -20,7 +20,7 @@ end
 -- Yank the base name of the file under the cursor
 local yank_file_basename = function()
   local entry = require('telescope.actions.state').get_selected_entry()
-  vim.fn.setreg('*', entry.ordinal)
+  vim.fn.setreg('+', entry.ordinal)
   vim.schedule(function () print(entry.ordinal .. " sent to clipboard") end)
 end
 
@@ -29,7 +29,7 @@ local yank_file_name = function()
   local entry = require('telescope.actions.state').get_selected_entry()
   local prefix = entry.Path._cwd .. entry.Path._sep
   local filename = string.gsub(entry.path, prefix, "", 1)
-  vim.fn.setreg('*', filename)
+  vim.fn.setreg('+', filename)
   vim.schedule(function () print(filename .. " sent to clipboard") end)
 end
 
