@@ -65,3 +65,6 @@ vim.cmd("set listchars=trail:~,tab:┊\\ ,eol:↵,nbsp:␣")
 -- Set linebreak makes the text wrap whole words when the line space on the screen
 -- is too small for the line, instead of only the remaining characters
 vim.o.linebreak = true
+
+-- Don't redraw screen while in the middle of executing a keymap
+vim.o.lazyredraw = true
