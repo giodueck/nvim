@@ -15,5 +15,13 @@ vim.api.nvim_set_keymap(
 )
 -- require('telescope').extensions.asynctasks.all()
 
+-- Cancel running task
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tq",
+  ":AsyncStop<CR>",
+  { noremap = true, desc = "Stop running task", silent = true }
+)
+
 -- Async tasks should open the quickfix-list
 vim.g.asyncrun_open = 9
