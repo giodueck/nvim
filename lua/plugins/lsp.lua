@@ -21,7 +21,8 @@ local on_attach = function(_, bufnr)
   nmap('gr', require('telescope.builtin').lsp_references, 'Goto References')
   nmap('gI', vim.lsp.buf.implementation, 'Goto Implementation')
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type Definition')
-  nmap('<leader>ds', function () require('telescope.builtin').lsp_document_symbols({ symbol_width = 50 }) end, 'Document Symbols')
+  nmap('<leader>ds', function() require('telescope.builtin').lsp_document_symbols({ symbol_width = 50 }) end,
+    'Document Symbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
 
   -- See `:help K` for why this keymap
@@ -52,14 +53,22 @@ local servers = {
   gopls = {
     cmd = { "gops -mod=mod" },
   },
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
 
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
+    },
+  },
+
+  pylsp = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = { 'E501' }, -- This is the Error code for line too long.
+          maxLineLength = 120  -- This sets how long the line is allowed to be. Also has effect on formatter.
+        },
+      },
     },
   },
 }
@@ -92,4 +101,5 @@ mason_lspconfig.setup_handlers {
 }
 
 -- Keymaps
-vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", { noremap = true, desc = "Format File", silent = true })
+vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>",
+  { noremap = true, desc = "Format File", silent = true })
