@@ -100,8 +100,9 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search Help' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = 'Search current Word' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search by Grep' })
+vim.keymap.set('n', '<leader>rg', require('telescope.builtin').live_grep, { desc = 'Search with ripgrep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = 'Search Diagnostics' })
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').oldfiles, { desc = 'Search Recent files' })
+vim.keymap.set('n', '<leader>so', require('telescope.builtin').oldfiles, { desc = 'Search Recent files (Oldfiles)' })
 
 vim.api.nvim_set_keymap(
   "n",
