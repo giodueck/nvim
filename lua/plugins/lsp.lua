@@ -103,3 +103,6 @@ mason_lspconfig.setup_handlers {
 -- Keymaps
 vim.keymap.set("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>",
   { noremap = true, desc = "Format File", silent = true })
+
+vim.keymap.set("n", "<leader>lq", ":LspStop<CR>",
+  { noremap = true, desc = "Stop LSP", silent = true })
