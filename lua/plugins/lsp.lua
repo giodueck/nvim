@@ -60,17 +60,6 @@ local servers = {
       telemetry = { enable = false },
     },
   },
-
-  pylsp = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = { 'E501' }, -- This is the Error code for line too long.
-          maxLineLength = 120  -- This sets how long the line is allowed to be. Also has effect on formatter.
-        },
-      },
-    },
-  },
 }
 
 -- Setup neovim lua configuration
