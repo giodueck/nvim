@@ -30,14 +30,14 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gf",
-  ":lua vim.cmd(\"Git log --oneline --follow \" .. vim.fn.expand('%'))<CR>",
+  ":lua vim.cmd(\"Git log --oneline --follow %\")<CR>",
   { noremap = true, desc = 'Git Log --oneline Follow current file', silent = true }
 )
 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gF",
-  ":lua vim.cmd(\"Git log --follow \" .. vim.fn.expand('%'))<CR>",
+  ":lua vim.cmd(\"Git log --follow %\")<CR>",
   { noremap = true, desc = 'Git Log Follow current file', silent = true }
 )
 
