@@ -68,3 +68,7 @@ vim.o.linebreak = true
 
 -- Don't redraw screen while in the middle of executing a keymap
 vim.o.lazyredraw = true
+
+-- Keep 2 lines between the cursor and the bottom and top of the window, to get some
+-- context around the cursor
+vim.o.scrolloff = 2
