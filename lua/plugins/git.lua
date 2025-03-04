@@ -64,7 +64,7 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>gmc",
+  "<leader>gm",
   ":Gvdiffsplit!<CR>",
   { noremap = true, desc = 'Git Merge Conflict: 3 way diff split', silent = true }
 )
