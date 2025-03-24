@@ -106,7 +106,7 @@ vim.keymap.set('n', '<leader>so', require('telescope.builtin').oldfiles, { desc 
 vim.api.nvim_set_keymap(
   "n",
   "<leader>fb",
-  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  ":Telescope file_browser path=%:p:h select_buffer=true git_status=false<CR>",
   { noremap = true, desc = 'File Browser in buffer path', silent = true }
 )
 
