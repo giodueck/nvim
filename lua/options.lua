@@ -72,3 +72,6 @@ vim.o.lazyredraw = true
 -- Keep 2 lines between the cursor and the bottom and top of the window, to get some
 -- context around the cursor
 vim.o.scrolloff = 2
+
+-- Open new vertical splits to the right of the current one
+vim.o.splitright = true
