@@ -41,11 +41,13 @@ require('telescope').setup {
         ["<M-p>"] = action_layout.toggle_preview,
         ["<S-CR>"] = select_one_or_multi,
         ["<C-a>"] = actions.toggle_all,
+        ["<C-f>"] = actions.send_selected_to_qflist,
       },
       n = {
         ["p"] = action_layout.toggle_preview,
         ["<S-CR>"] = select_one_or_multi,
         ["<C-a>"] = actions.toggle_all,
+        ["<C-f>"] = actions.send_selected_to_qflist,
       }
     },
     prompt_prefix = ' ',
