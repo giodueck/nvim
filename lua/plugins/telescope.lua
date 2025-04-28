@@ -18,13 +18,15 @@ local select_one_or_multi = function(prompt_bufnr)
 end
 
 -- Yank the base name of the file under the cursor
+-- Actually yanks the name in the telescope entry, including the search text for grep e.g.
 local yank_file_basename = function()
   local entry = require('telescope.actions.state').get_selected_entry()
   vim.fn.setreg('+', entry.ordinal)
   vim.schedule(function() print(entry.ordinal .. " sent to clipboard") end)
 end
 
--- Yank the cwd-relative name of the file under the cursor
+-- Yank the full name of the file under the cursor
+-- For file-browser copies the full path, for other pickers may not work
 local yank_file_name = function()
   local entry = require('telescope.actions.state').get_selected_entry()
   local prefix = entry.Path._cwd .. entry.Path._sep
@@ -42,12 +44,14 @@ require('telescope').setup {
         ["<S-CR>"] = select_one_or_multi,
         ["<C-a>"] = actions.toggle_all,
         ["<C-f>"] = actions.send_selected_to_qflist,
+        ["<M-n>"] = yank_file_basename,
       },
       n = {
         ["p"] = action_layout.toggle_preview,
         ["<S-CR>"] = select_one_or_multi,
         ["<C-a>"] = actions.toggle_all,
         ["<C-f>"] = actions.send_selected_to_qflist,
+        ["n"] = yank_file_basename,
       }
     },
     prompt_prefix = ' ',
@@ -70,11 +74,9 @@ require('telescope').setup {
       hijack_netrw = true,
       mappings = {
         ["i"] = {
-          ["<M-n>"] = yank_file_basename,
           ["<M-N>"] = yank_file_name,
         },
         ["n"] = {
-          ["n"] = yank_file_basename,
           ["N"] = yank_file_name,
         },
       },
