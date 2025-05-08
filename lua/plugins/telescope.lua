@@ -5,11 +5,18 @@ local action_layout = require("telescope.actions.layout")
 local select_one_or_multi = function(prompt_bufnr)
   local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
   local multi = picker:get_multi_selection()
+  local opened = 0
   if not vim.tbl_isempty(multi) then
     require('telescope.actions').close(prompt_bufnr)
     for _, j in pairs(multi) do
       if j.path ~= nil then
-        vim.cmd(string.format('%s %s', 'edit', j.path))
+        -- Open the first buffer in the list normally, then open the rest in vertical splits
+        if opened == 0 then
+          vim.cmd(string.format('%s %s', 'edit', j.path))
+          opened = 1
+        else
+          vim.cmd(string.format('%s %s', 'vsplit', j.path))
+        end
       end
     end
   else
