@@ -75,3 +75,10 @@ vim.api.nvim_set_keymap(
   ":Git add % | doautocmd BufWritePost<CR>",
   { noremap = true, desc = 'Git Add current file', silent = true }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gd",
+  ":Git diff<CR>",
+  { noremap = true, desc = 'Git diff', silent = true }
+)
