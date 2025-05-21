@@ -59,3 +59,10 @@ vim.keymap.set("n", "<M-@>", "@@", { noremap = true, desc = "Repeat last macro (
 
 -- Insert the current date in YYYY-MM-DD format
 vim.keymap.set("n", "<leader>id", "\"=strftime('%Y-%m-%d')<CR>p", {noremap = true, desc = "Insert the current date in YYYY-MM-DD format", silent = true})
+
+-- Unmap defaults related to lsp since they collide with the ones I use and cause a delay on "gr"
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gra")
+vim.keymap.del("x", "gra")
+vim.keymap.del("n", "grn")
