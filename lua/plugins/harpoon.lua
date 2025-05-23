@@ -6,7 +6,6 @@ harpoon:setup()
 
 -- Keymaps
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = 'Harpoon: add current buffer' })
-vim.keymap.set("n", "<leader>d", function() harpoon:list():remove() end, { desc = 'Harpoon: remove current buffer' })
 vim.keymap.set("n", "<leader>n", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = 'Harpoon: toggle quick menu' })
 
 vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end, { desc = 'Harpoon: Go to first harpoon item' })
