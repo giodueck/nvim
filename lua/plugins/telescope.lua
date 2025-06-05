@@ -71,7 +71,7 @@ require('telescope').setup {
           ["<M-d>"] = actions.delete_buffer,
         },
         n = {
-          ["<M-d>"] = actions.delete_buffer,
+          ["d"] = actions.delete_buffer,
         },
       },
     },
