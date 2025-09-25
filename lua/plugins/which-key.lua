@@ -41,4 +41,6 @@ wk.add({
 
   { "<leader>ta", mode = "n", desc = "Tasks: list", icon = "" },
   { "<leader>tl", mode = "n", desc = "Tasks: run last", icon = "" },
+
+  { "g?", group = "debugprint" },
 })

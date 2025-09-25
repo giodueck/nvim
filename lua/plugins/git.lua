@@ -82,3 +82,24 @@ vim.api.nvim_set_keymap(
   ":Git diff<CR>",
   { noremap = true, desc = 'Git diff', silent = true }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "gh",
+  "/<<<<<<<<CR>V/>>>>>>><CR>",
+  { noremap = true, desc = 'Merge Conflict select next conflict marker', silent = true }
+)
+
+vim.api.nvim_set_keymap(
+  "v",
+  "gh",
+  ":diffget //2<CR>",
+  { noremap = true, desc = 'Merge Conflict select ours', silent = true }
+)
+
+vim.api.nvim_set_keymap(
+  "v",
+  "gl",
+  ":diffget //3<CR>",
+  { noremap = true, desc = 'Merge Conflict select theirs', silent = true }
+)
