@@ -24,6 +24,13 @@ local select_one_or_multi = function(prompt_bufnr)
   end
 end
 
+-- Sets depth to 1 and selects default
+local reset_depth_select_default = function(prompt_bufnr)
+  local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
+  picker.finder.depth = 1
+  require('telescope.actions').select_default(prompt_bufnr)
+end
+
 -- Yank the base name of the file under the cursor
 -- Actually yanks the name in the telescope entry, including the search text for grep e.g.
 local yank_file_basename = function()
@@ -82,9 +89,11 @@ require('telescope').setup {
       mappings = {
         ["i"] = {
           ["<M-N>"] = yank_file_name,
+          ["<CR>"] = reset_depth_select_default,
         },
         ["n"] = {
           ["N"] = yank_file_name,
+          ["<CR>"] = reset_depth_select_default,
         },
       },
       hidden = true,
