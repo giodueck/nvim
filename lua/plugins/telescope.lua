@@ -1,5 +1,6 @@
 local actions = require "telescope.actions"
 local action_layout = require("telescope.actions.layout")
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 -- Selects all selected buffers, or the one under the curser if none are selected
 local select_one_or_multi = function(prompt_bufnr)
@@ -49,6 +50,20 @@ local yank_file_name = function()
   vim.schedule(function() print(filename .. " sent to clipboard") end)
 end
 
+-- Set execution permission of selected file with `chmod +x`
+local make_executable = function()
+  local entry = require('telescope.actions.state').get_selected_entry()
+  os.execute('chmod +x ' .. entry.path)
+  vim.cmd(":Telescope file_browser git_status=false path=" .. entry.path:match("@?(.*/)") .. " select_buffer=true<CR>")
+end
+
+-- Set execution permission of selected file with `chmod -x`
+local make_non_executable = function()
+  local entry = require('telescope.actions.state').get_selected_entry()
+  os.execute('chmod -x ' .. entry.path)
+  vim.cmd(":Telescope file_browser git_status=false path=" .. entry.path:match("@?(.*/)") .. " select_buffer=true<CR>")
+end
+
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -90,10 +105,14 @@ require('telescope').setup {
         ["i"] = {
           ["<M-N>"] = yank_file_name,
           ["<CR>"] = reset_depth_select_default,
+          ["<M-x>"] = make_executable,
+          ["<M-X>"] = make_non_executable,
         },
         ["n"] = {
           ["N"] = yank_file_name,
           ["<CR>"] = reset_depth_select_default,
+          ["x"] = make_executable,
+          ["X"] = make_non_executable,
         },
       },
       hidden = true,
@@ -133,7 +152,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>fB",
-  ":Telescope file_browser<CR>",
+  ":Telescope file_browser git_status=false<CR>",
   { noremap = true, desc = 'File Browser in cwd', silent = true }
 )
 
