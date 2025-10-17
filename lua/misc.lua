@@ -29,9 +29,3 @@ vim.api.nvim_create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter', 'WinLeave'
   command = 'if &nu                  | set nornu | endif',
   group = 'HybridNumberToggle',
 })
-
--- [[ The lualine dev thinks overriding showtabline without an option to disable it is for some reason a good idea ]]
-vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
-  pattern = '*',
-  command = 'set showtabline=1',
-})

@@ -119,6 +119,7 @@ require('lazy').setup({
         theme = 'tokyonight',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
+        always_show_tabline = false,
       },
       tabline = {
         lualine_b = {
