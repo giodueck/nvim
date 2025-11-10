@@ -280,8 +280,8 @@ require('lazy').setup({
   {
     "andrewferrier/debugprint.nvim",
     dependencies = {
-      "echasnovski/mini.nvim",          -- Needed to enable :ToggleCommentDebugPrints for NeoVim <= 0.9
-      "nvim-treesitter/nvim-treesitter" -- Needed to enable treesitter for NeoVim 0.8
+      "nvim-mini/mini.hipatterns",     -- Optional: Needed for line highlighting ('fine-grained' hipatterns plugin)
+      "nvim-telescope/telescope.nvim", -- Optional: If you want to use the `:Debugprint search` command with telescope.nvim
     },
     opts = {
       keymaps = {

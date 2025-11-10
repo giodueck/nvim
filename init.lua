@@ -43,6 +43,9 @@ require('plugins.nvim-cmp')
 
 require('plugins.obsidian')
 
+-- [[ Debugprint ]]
+require('plugins.debugprint')
+
 -- [[ Tmux integration ]]
 require('plugins.tmux')
 
