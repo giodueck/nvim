@@ -33,6 +33,15 @@ require('lazy').setup({
       dependencies = {
         -- Automatically install LSPs to stdpath for neovim
         'mason-org/mason.nvim',
+        -- When contributing, use local mason regitry version vvv
+        -- {
+        --   'mason-org/mason.nvim',
+        --   opts = {
+        --     registries = {
+        --       "file:~/repo/mason-registry",
+        --     },
+        --   },
+        -- },
         'mason-org/mason-lspconfig.nvim',
 
         -- Useful status updates for LSP
@@ -57,7 +66,7 @@ require('lazy').setup({
           },
         },
         { "Bilal2453/luvit-meta",      lazy = true }, -- optional `vim.uv` typings
-        {                                           -- optional completion source for require statements and module annotations
+        {                                             -- optional completion source for require statements and module annotations
           "hrsh7th/nvim-cmp",
           opts = function(_, opts)
             opts.sources = opts.sources or {}
@@ -281,7 +290,7 @@ require('lazy').setup({
     {
       "andrewferrier/debugprint.nvim",
       dependencies = {
-        "nvim-mini/mini.hipatterns",   -- Optional: Needed for line highlighting ('fine-grained' hipatterns plugin)
+        "nvim-mini/mini.hipatterns",     -- Optional: Needed for line highlighting ('fine-grained' hipatterns plugin)
         "nvim-telescope/telescope.nvim", -- Optional: If you want to use the `:Debugprint search` command with telescope.nvim
       },
       opts = {
