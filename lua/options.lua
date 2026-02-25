@@ -75,3 +75,5 @@ vim.o.scrolloff = 2
 
 -- Open new vertical splits to the right of the current one
 vim.o.splitright = true
+
+vim.o.cursorline = true
