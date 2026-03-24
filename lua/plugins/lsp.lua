@@ -84,9 +84,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  gopls = {
-    cmd = { "gops -mod=mod" },
-  },
+  gopls = {},
 
   lua_ls = {
     Lua = {

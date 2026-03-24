@@ -57,6 +57,7 @@ cmp.setup {
         and not (vim.fn.reg_executing() ~= "")
     end
   end,
+  preselect = 'None',
 }
 
 -- Custom snippets
