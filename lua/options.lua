@@ -77,3 +77,6 @@ vim.o.scrolloff = 2
 vim.o.splitright = true
 
 vim.o.cursorline = true
+
+-- Make C-a and C-x more intuitive
+vim.o.nrformats = "bin,hex,blank"
