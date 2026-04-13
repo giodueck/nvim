@@ -172,9 +172,6 @@ require('lazy').setup({
       lazy = false,
       branch = 'main',
       build = ':TSUpdate',
-      config = function()
-        pcall(require('nvim-treesitter.install').update { with_sync = true })
-      end,
     },
 
     -- Hex editor
