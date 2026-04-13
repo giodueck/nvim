@@ -334,15 +334,6 @@ require('lazy').setup({
       version = "*"
     },
 
-    {
-      "elkowar/yuck.vim",
-      lazy = true,
-      event = {
-        "BufReadPre " .. "*.yuck",
-        "BufNewFile " .. "*.yuck",
-      },
-    },
-
   },
   {
     rocks = {
