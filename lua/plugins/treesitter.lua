@@ -1,6 +1,6 @@
 require('nvim-treesitter').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { --[[ 'c', 'cpp', 'go', 'lua', 'python', 'vimdoc', 'vim' ]] },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'vimdoc', 'vim', 'zig', 'dockerfile', 'bash' },
   modules = { },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
