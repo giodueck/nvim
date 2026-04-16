@@ -46,6 +46,9 @@ require('plugins.obsidian')
 -- [[ Debugprint ]]
 require('plugins.debugprint')
 
+-- [[ Debugger ]]
+require('plugins.dap')
+
 -- [[ Tmux integration ]]
 require('plugins.tmux')
 

@@ -337,6 +337,72 @@ require('lazy').setup({
       version = "*"
     },
 
+    {
+      "mfussenegger/nvim-dap",
+      lazy = true,
+      keys = {
+        {
+          "<leader>db",
+          function() require("dap").toggle_breakpoint() end,
+          desc = "DAP: Toggle Breakpoint",
+        },
+        {
+          "<leader>dc",
+          function() require("dap").continue() end,
+          desc = "DAP: Continue",
+        },
+        {
+          "<leader>du",
+          function() require("dap").step_over() end,
+          desc = "DAP: Step over",
+        },
+        {
+          "<leader>di",
+          function() require("dap").step_into() end,
+          desc = "DAP: Step into",
+        },
+        {
+          "<leader>do",
+          function() require("dap").step_out() end,
+          desc = "DAP: Step out",
+        },
+        {
+          "<leader>dr",
+          function() require("dap").run_to_cursor() end,
+          desc = "DAP: Run to cursor",
+        },
+        {
+          "<leader>dq",
+          function() require("dap").terminate() end,
+          desc = "DAP: Terminate",
+        },
+        {
+          "<leader>de",
+          function() require("dapui").eval() end,
+          desc = "DAP: Evaluate",
+        },
+      },
+    },
+
+    {
+      "rcarriga/nvim-dap-ui",
+      lazy = true,
+      config = true,
+      keys = {
+        {
+          "<leader>dd",
+          function() require("dapui").toggle({}) end,
+          desc = "Toggle Dap UI"
+        },
+      },
+      dependencies = {
+        "jay-babu/mason-nvim-dap.nvim",
+        "leoluz/nvim-dap-go",
+        "mfussenegger/nvim-dap-python",
+        "nvim-neotest/nvim-nio",
+        "theHamsta/nvim-dap-virtual-text",
+      },
+    }
   },
   {
     rocks = {
