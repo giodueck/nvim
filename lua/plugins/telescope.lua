@@ -159,6 +159,6 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>cd",
-  ":Telescope file_browser files=false depth=4 hidden=false<CR>",
+  ":Telescope file_browser files=false depth=4 hidden=false git_status=false<CR>",
   { noremap = true, desc = 'Find Directory', silent = true }
 )
