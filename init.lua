@@ -57,6 +57,8 @@ require('plugins.tokyonight')
 
 require('plugins.vimtex')
 
+require('plugins.noneckpain')
+
 -- Keymap help
 -- [[ Which-key ]]
 require('plugins.which-key')

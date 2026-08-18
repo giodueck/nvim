@@ -402,7 +402,18 @@ require('lazy').setup({
         "nvim-neotest/nvim-nio",
         "theHamsta/nvim-dap-virtual-text",
       },
-    }
+    },
+
+    {
+      "shortcuts/no-neck-pain.nvim",
+      version = "*",
+      opts = {
+        width = 120,
+        autocmds = {
+          enableOnVimEnter = false,
+        },
+      },
+    },
   },
   {
     rocks = {
