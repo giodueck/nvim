@@ -7,3 +7,10 @@ local bitbake = {
 }
 
 require('debugprint').setup({ filetypes = { ["bitbake"] = bitbake, }})
+
+vim.api.nvim_set_keymap(
+  "n",
+  "g?r",
+  ":Debugprint resetcounter<CR>",
+  { noremap = true, desc = 'Debugprint resetcounter', silent = true }
+)
